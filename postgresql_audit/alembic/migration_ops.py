@@ -77,9 +77,8 @@ def add_column_to_activity(operations, operation):
 
 @Operations.implementation_for(RemoveColumnFromRemoveActivityOp)
 def remove_column_from_activity(operations, operation):
-    conn = operations.connection
     remove_column(
-        conn,
+        operations,
         operation.table_name,
         operation.column_name,
         operation.schema
